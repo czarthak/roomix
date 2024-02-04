@@ -34,25 +34,25 @@ export const Navbar = ({ token }) => {
               <li>
                 <NavLink to="/accountinfo">Profile Information</NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/myorganizations">My Organizations</NavLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <NavLink to="/createorganization">Create Organization</NavLink>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <NavLink to="/myrequests">My Requests</NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to="/listallorganizations">
                   Find Roomates
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink to="/allorganizationstatistics">
                   Organziation Statistics
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   to="/"

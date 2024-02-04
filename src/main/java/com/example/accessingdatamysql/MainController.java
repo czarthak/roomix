@@ -122,11 +122,13 @@ public class MainController {
 
     @PostMapping(path = "/img")
     public ResponseEntity<String> uploadImage(@RequestParam("imageFile") MultipartFile imageFile,
-            @RequestParam("token") String token) {
+            @RequestParam("email") String email) {
         try {
-            // Use the email to determine the correct user directory
-            String userDirectory = "./imgs";
-            String fileName = imageService.saveImageToStorage(userDirectory, imageFile, token);
+            String sanitizedEmail = email.replaceAll("@|\\.", "");
+            String relativeImagePath = ""; // Relative to your public folder
+            Path userDirectory = Path.of("inventory-manager/public", relativeImagePath);
+            String fileName = imageService.saveImageToStorage(userDirectory.toString(), imageFile, sanitizedEmail);
+
             return ResponseEntity.ok("File uploaded successfully: " + fileName);
         } catch (IOException e) {
             e.printStackTrace();

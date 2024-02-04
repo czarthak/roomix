@@ -5,7 +5,8 @@ import "./AccountInformation.css"; // Import your external CSS file
 import Places from "../map/places";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import { Link } from "react-router-dom";
-
+import { TextField, Avatar } from '@mui/material';
+import { IconButton, CloudUploadIcon } from '@mui/material';
 
 
 const AccountInformation = ({ token }) => {
@@ -24,10 +25,9 @@ const AccountInformation = ({ token }) => {
   });
 
 
- 
 
 
-
+  const [selectedImage, setSelectedImage] = useState(null);
   const [selectedApts, setSelectedApts] = useState([]);
   const [initials, setInitials] = useState("");
 
@@ -51,7 +51,7 @@ const AccountInformation = ({ token }) => {
       formData.append('imageFile', file);
 
       // Include the email in the URL as a query parameter
-      const url = `http://localhost:8080/user/img?token=${encodeURIComponent(token.jwt)}`;
+      const url = `http://localhost:8080/user/img?email=${encodeURIComponent(userInfo.email)}`;
 
       Axios.post(url, formData, {
         headers: {
@@ -88,6 +88,14 @@ const AccountInformation = ({ token }) => {
 
   const [updateSuccess, setUpdateSuccess] = useState(false);
 
+  const getImageUrl = (email) => {
+    const imageName = email.replace(/[@.]/g, '') + '.jpeg';
+    console.log(imageName);
+    // Update the path according to where your images are served from
+    const imageUrl = `${process.env.PUBLIC_URL}/${imageName}`;
+    return imageUrl;
+  };
+
   useEffect(() => {
     // Fetch user information when the component mounts
     getUserInfo();
@@ -99,8 +107,7 @@ const AccountInformation = ({ token }) => {
         jwt: token.jwt,
       });
       console.log(response);
-      if (response.data.result != "success")
-      {
+      if (response.data.result != "success") {
         console.error("Error fetching user information:");
       }
       setUserInfo(response.data.user);
@@ -150,14 +157,11 @@ const AccountInformation = ({ token }) => {
 
   return (
     <div className="account-info-container">
-      <div className="profile-side">
-        {profilePic ? (
-          <img src={profilePic} alt="Profile" className="profile-picture" />
-        ) : (
-          <div className="initials-circle">{/* User initials here */}</div>
-        )}
-        <input type="file" onChange={handleImageUpload} />
-      </div>
+      <Avatar
+        src={getImageUrl(userInfo.email)}
+        sx={{ width: 80, height: 80, m: 2 }}
+        alt={`${userInfo.fname} ${userInfo.lname}`}
+      />
       <h2>Profile Information</h2>
       {updateSuccess && (
         <p className="success-message">Information updated successfully!</p>
@@ -241,7 +245,7 @@ const AccountInformation = ({ token }) => {
           onChange={handleChange}
         />
         <label> Add some places you'd want to live at here </label>
-        <Places handleLocationSelect={handleLocationSelect}/>
+        <Places handleLocationSelect={handleLocationSelect} />
 
 
         <label htmlFor="budget">Budget (Per Month)</label>
@@ -258,44 +262,44 @@ const AccountInformation = ({ token }) => {
         <div className="selected-apartments">
           <b> Apartments shortlisted </b>
           {selectedApts.map((apt, index) => (
-              <div key={index} className="apartment-item">
-                {apt[0]} {/* Apartment description */}
-                <button className="remove-apartment-btn" onClick={() => removeApartment(apt[1])}>X</button>
-              </div>
+            <div key={index} className="apartment-item">
+              {apt[0]} {/* Apartment description */}
+              <button className="remove-apartment-btn" onClick={() => removeApartment(apt[1])}>X</button>
+            </div>
           ))}
         </div>
 
         <div className="home-container">
-        
-        <h2>Discover Your Roomie Match</h2>
-        <p>
-          Unlock a more personalized roommate matching experience by sharing your personality type.
-        </p>
-        <p>
-          Knowing your personality type helps us find the roommate who complements you best. Enter your 16-personality type (e.g., INFP, ESTJ, etc.) below:
-        </p>
-        
-        <label htmlFor="personalTrait">Personality Test Result:</label>
-        <input
-          type="text"
-          id="personalTrait"
-          name="personalTrait"
-          value={userInfo.personalTrait}
-          onChange={handleChange}
-        />
-        
-        <p>
-        Not sure of your personality type? No problem! Take our custom Test
-        <Link to="/personality-test" className="personality-test-button">
-        <b>Start Now</b>  
-        </Link>
-        
-</p>
-        
-       
-        
-        
-      </div>
+
+          <h2>Discover Your Roomie Match</h2>
+          <p>
+            Unlock a more personalized roommate matching experience by sharing your personality type.
+          </p>
+          <p>
+            Knowing your personality type helps us find the roommate who complements you best. Enter your 16-personality type (e.g., INFP, ESTJ, etc.) below:
+          </p>
+
+          <label htmlFor="personalTrait">Personality Test Result:</label>
+          <input
+            type="text"
+            id="personalTrait"
+            name="personalTrait"
+            value={userInfo.personalTrait}
+            onChange={handleChange}
+          />
+
+          <p>
+            Not sure of your personality type? No problem! Take our custom Test
+            <Link to="/personality-test" className="personality-test-button">
+              <b>Start Now</b>
+            </Link>
+
+          </p>
+
+
+
+
+        </div>
 
 
         <button type="button" onClick={handleUpdate}>
@@ -314,3 +318,4 @@ AccountInformation.propTypes = {
 };
 
 export default AccountInformation;
+

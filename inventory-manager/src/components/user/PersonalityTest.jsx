@@ -40,7 +40,7 @@ const PersonalityTest = () => {
 
       <form onSubmit={handleSubmit}>
         {/* Question 1 */}
-        // Inside your component's return statement
+        
         {/* Question 1 */}
         <div className="question">
         <p>Do you find yourself rejuvenated by social gatherings and conversations with others?</p>
@@ -94,7 +94,7 @@ const PersonalityTest = () => {
       {result && <div className="result">{result}</div>}
 
       <p>
-        <Link to="/accountinfo" className="back-link">Back to Account Info</Link>
+        <Link to="/accountinfo" className="back-link">Back to Account To</Link>
       </p>
     </div>
   );

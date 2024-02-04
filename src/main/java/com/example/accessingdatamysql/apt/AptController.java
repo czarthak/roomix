@@ -58,6 +58,21 @@ public class AptController {
         return response;
     }
 
+    @PostMapping(path="/user/public")
+    public @ResponseBody Map<String, Object> seeUserApt(@RequestBody Map<String, String> json)
+    {
+        // This returns a JSON or XML with the users
+        Map<String, Object> response = new HashMap<>();
+        if (!json.containsKey("email"))
+        {
+            response.put("result", "failure - bad request");
+            return response;
+        }
+        response.put("result", "success");
+        response.put("descriptions" , customAptRepository.getAptDescriptions((String) json.get("email")));
+        response.put("user" , customAptRepository.publicApt((String) json.get("email")));
+        return response;
+    }
     @PostMapping(path="/user/add")
     public @ResponseBody Map<String, Object> addUserApt(@RequestBody Map<String, Object> json)
     {

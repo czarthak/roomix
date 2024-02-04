@@ -182,18 +182,18 @@ export default function Places({ handleLocationSelect }) {
         </div>);
 }
 
-// function Map() {
-//     const center = useMemo(() => ({ lat: 43.45, lng: -80.49 }), []);
-//     const [selected, setSelected] = useState(null);
-//
-//     return (
-//         <>
-//             <div className="places-container">
-//                 <PlacesAutocomplete setSelected={setSelected} />
-//             </div>
-//         </>
-//     );
-// }
+function Map() {
+    const center = useMemo(() => ({ lat: 43.45, lng: -80.49 }), []);
+    const [selected, setSelected] = useState(null);
+
+    return (
+        <>
+            <div className="places-container">
+                <PlacesAutocomplete setSelected={setSelected} />
+            </div>
+        </>
+    );
+}
 
 
 const PlacesAutocomplete = ({ setSelected }) => {

@@ -35,5 +35,13 @@ public class CustomAptRepository {
         return q.executeUpdate() != 0;
     }
 
+    @Transactional
+    public Object publicApt(String email)
+    {
+        String query = "SELECT fname, lname, phone_number, year, budget, personal_trait, major FROM USER u WHERE u.email = ?1";
+        Query q = this.entityManager.createNativeQuery(query)
+                .setParameter(1, email);
+        return q.getSingleResult();
+    }
 
 }

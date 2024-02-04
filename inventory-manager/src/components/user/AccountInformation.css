@@ -1,148 +1,183 @@
 /* AccountInformation.css */
 
 .account-info-container {
-  max-width: 700px;
-  /* Increased max-width for larger screens */
-  margin: 40px auto;
-  /* Increased margin for more vertical space */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f8f9fa;
 }
 
-.info-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.profile-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
-
-label {
-  margin-bottom: 5px;
-}
-
-input,
-textarea {
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button {
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-.success-message {
-  color: green;
-  margin-top: 15px;
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #f0f0f0;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .account-info-container {
-    max-width: 100%;
-    /* Allows the container to be full width on smaller screens */
-    margin: 20px auto;
-  }
-}
-
-.apartment-item {
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.apartment-item:hover {
-  border-color: #007bff; /* Highlight color on hover */
-}
-
-.remove-apartment-btn {
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 5px 10px;
-  max-width: 40px;
-}
-
-.remove-apartment-btn:hover {
-  background-color: darkred;
-}
-
-
-/* AccountInformation.css */
-
-/* ... existing styles ... */
-
-/* AccountInformation.css */
-
-/* ... existing styles ... */
 
 .profile-picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
-  /* Adjust as needed */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #007bff;
 }
 
 .initials-circle {
-  width: 100px;
-  /* Increased size of the circle */
-  height: 100px;
-  /* Increased size of the circle */
-  border-radius: 50%;
-  /* Makes it circular */
-  background-color: #007bff;
-  /* Background color */
-  color: white;
-  /* Text color */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  /* Increased font size */
-  font-weight: bold;
-  font-family: 'Arial', sans-serif;
-  /* Change to your preferred font */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  /* Optional: Adds a subtle shadow for depth */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #fff;
+    background-color: #007bff;
+    margin-bottom: 10px;
+}
+
+.info-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+.info-form input[type="text"],
+.info-form input[type="password"],
+.info-form input[type="email"],
+.info-form textarea,
+.info-form select {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.info-form input[type="text"]:focus,
+.info-form input[type="password"]:focus,
+.info-form input[type="email"]:focus,
+.info-form textarea:focus,
+.info-form select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.info-form label {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.success-message {
+    color: #28a745;
+    background-color: #dff0d8;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 0;
+    display: none;
+    /* Initially hide the message */
+    animation: fadeInOut 3s forwards;
+    /* Animation to fade in and then out */
+}
+
+@keyframes fadeInOut {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }
 
 .personality-test-button {
-  background-color: #c2bf2c; /* Yellow color */
-  color: #000; /* Black text */
-  padding: 8px 16px; /* Adjust padding to fit the text */
-  border: none;
-  border-radius: 25px; /* Bubbly rounded edges */
-  cursor: pointer;
-  font-size: 0.9em; /* Adjust font size to ensure "Start Now" fits on the button */
-  text-align: center; /* Ensure text is centered */
-  display: inline-block; /* Allows control over padding and size */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds subtle shadow for depth */
-  transition: background-color 0.3s ease;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.personality-test-button:hover {
-  background-color: #443d26; /* Lighter yellow on hover for visual feedback */
+.selected-apartments {
+    margin-top: 20px;
+}
+
+.apartment-item {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.apartment-item:hover {
+    border-color: #007bff;
+    /* Highlight color on hover */
+}
+
+.remove-apartment-btn {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    max-width: 40px;
+}
+
+.remove-apartment-btn:hover {
+    background-color: darkred;
+}
+
+
+.apartment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.remove-apartment-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #dc3545;
 }

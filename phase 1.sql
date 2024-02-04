@@ -15,7 +15,6 @@ CREATE TABLE IF NOT EXISTS USER (
     PRIMARY KEY (email)
 );
 INSERT INTO USER (email, lname, fname, password, phone_number) VALUES
-('alicedoe@example.com', 'Doe', 'Alice', 'securepass', '987-654-3210'),
 ('lukebrown@example.com', 'Brown', 'Luke', 'securepass1', '987-654-3211'),
 ('oliviabell@example.com', 'Bell', 'Olivia', 'securepass2', '987-654-3212'),
 ('melissajones@example.com', 'Jones', 'Melissa', 'securepass3', '987-654-3213'),
@@ -23,6 +22,7 @@ INSERT INTO USER (email, lname, fname, password, phone_number) VALUES
 ('emilyjohnson@example.com', 'Johnson', 'Emily', 'sciencePass', '8888888888');
 
 INSERT INTO USER (email, lname, fname, password, phone_number, year, major, bio, budget, personal_trait) VALUES
+('alicedoe@example.com', 'Doe', 'Alice', 'securepass', '987-654-3210', 'junior', 'Chemistry', 'Hi Im alice', '900', 'ENTP'),
 ('johnsmith@example.com', 'Smith', 'John', 'password123', '123-456-7890', 'freshman', 'Computer Science', 'Hi my name is John', '800.0', 'EJFG');
 
 CREATE TABLE IF NOT EXISTS APT (
@@ -34,7 +34,9 @@ CREATE TABLE IF NOT EXISTS APT (
 );
 INSERT INTO APT(email, description, id) VALUES
 ('alicedoe@example.com', 'Collegiate Suites & Hunters Ridge, Henry Lane, Blacksburg, VA, USA', 'ChIJWf94jHyVTYgR0piad-XCMWw'),
-('alicedoe@example.com', 'The Edge Apartment Homes, Edge Way, Blacksburg, VA, USA', 'ChIJfTLXfW6VTYgRFpbHGhO5yDE');
+('alicedoe@example.com', 'The Edge Apartment Homes, Edge Way, Blacksburg, VA, USA', 'ChIJfTLXfW6VTYgRFpbHGhO5yDE'),
+('johnsmith@example.com', 'Alight Blacksburg, Patrick Henry Drive, Blacksburg, VA, USA', 'ChIJn0P0cmSVTYgR5C5kZoj5N7U');
+
 
 
 

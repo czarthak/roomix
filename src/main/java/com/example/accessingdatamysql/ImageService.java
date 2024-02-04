@@ -14,23 +14,24 @@ import java.nio.file.StandardCopyOption;
 @Service
 public class ImageService {
 
-    // Save image in a local directory
-    public String saveImageToStorage(String uploadDirectory, MultipartFile imageFile, String token) throws IOException {
-        // Define the new filename using the token and a fixed ".png" extension
-        String newFileName = token + ".png";
-
+    public String saveImageToStorage(String uploadDirectory, MultipartFile imageFile, String sanitizedEmail) throws IOException {
+        // Extract the file extension
+        String originalFilename = imageFile.getOriginalFilename();
+        String fileExtension = originalFilename.substring(originalFilename.lastIndexOf("."));
+    
+        // Construct the file name using sanitizedEmail and the original file extension
+        String uniqueFileName = sanitizedEmail + fileExtension;
+    
         Path uploadPath = Paths.get(uploadDirectory);
-        Path filePath = uploadPath.resolve(newFileName);
-
-        // Ensure the upload directory exists
+        Path filePath = uploadPath.resolve(uniqueFileName);
+    
         if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);
         }
-
-        // Save the image file to the new path
+    
         Files.copy(imageFile.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
-
-        return newFileName; // Return the new filename
+    
+        return uniqueFileName;
     }
 
     // To view an image
