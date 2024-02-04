@@ -1,0 +1,148 @@
+/* AccountInformation.css */
+
+.account-info-container {
+  max-width: 700px;
+  /* Increased max-width for larger screens */
+  margin: 40px auto;
+  /* Increased margin for more vertical space */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  color: green;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .account-info-container {
+    max-width: 100%;
+    /* Allows the container to be full width on smaller screens */
+    margin: 20px auto;
+  }
+}
+
+.apartment-item {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apartment-item:hover {
+  border-color: #007bff; /* Highlight color on hover */
+}
+
+.remove-apartment-btn {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  max-width: 40px;
+}
+
+.remove-apartment-btn:hover {
+  background-color: darkred;
+}
+
+
+/* AccountInformation.css */
+
+/* ... existing styles ... */
+
+/* AccountInformation.css */
+
+/* ... existing styles ... */
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  /* Adjust as needed */
+}
+
+.initials-circle {
+  width: 100px;
+  /* Increased size of the circle */
+  height: 100px;
+  /* Increased size of the circle */
+  border-radius: 50%;
+  /* Makes it circular */
+  background-color: #007bff;
+  /* Background color */
+  color: white;
+  /* Text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  /* Increased font size */
+  font-weight: bold;
+  font-family: 'Arial', sans-serif;
+  /* Change to your preferred font */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a subtle shadow for depth */
+}
+
+.personality-test-button {
+  background-color: #c2bf2c; /* Yellow color */
+  color: #000; /* Black text */
+  padding: 8px 16px; /* Adjust padding to fit the text */
+  border: none;
+  border-radius: 25px; /* Bubbly rounded edges */
+  cursor: pointer;
+  font-size: 0.9em; /* Adjust font size to ensure "Start Now" fits on the button */
+  text-align: center; /* Ensure text is centered */
+  display: inline-block; /* Allows control over padding and size */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds subtle shadow for depth */
+  transition: background-color 0.3s ease;
+}
+
+.personality-test-button:hover {
+  background-color: #443d26; /* Lighter yellow on hover for visual feedback */
+}

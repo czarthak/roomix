@@ -1,0 +1,56 @@
+.organization-details {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Center organization information */
+.organization-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.blue-button {
+    background-color: #3498db;
+    color: #fff;
+    border: 1px solid #2980b9;
+    padding: 8px 16px; /* Adjusted padding for smaller buttons */
+    margin: 0 10px; /* Adjusted margin */
+    font-size: 14px; /* Adjusted font size */
+    cursor: pointer;
+    max-width: 10%;
+}
+
+.blue-button:hover {
+    background-color: #2980b9;
+}
+
+.dark-red-button {
+    background-color: #8b0000; /* Dark red color */
+    color: #fff;
+    border: 1px solid #6b0000; /* Dark red border color */
+    padding: 8px 16px;
+    margin: 0 10px;
+    font-size: 14px;
+    cursor: pointer;
+    max-width: 10%;
+}
+
+.dark-red-button:hover {
+    background-color: #6b0000; /* Dark red color on hover */
+}

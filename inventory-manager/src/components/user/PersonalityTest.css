@@ -1,0 +1,132 @@
+/* Existing styles */
+.personality-test-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+  
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+  
+p {
+    margin-bottom: 20px;
+    color: #0a0a0a;
+}
+  
+.question {
+    margin-bottom: 30px;
+}
+  
+.question p {
+    font-weight: 500;
+    color: #444;
+}
+  
+label {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    user-select: none; /* Prevent text selection */
+}
+
+label:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Specific styles for checked state */
+input[type="radio"]:checked + label {
+    background-color: #ADD8E6; /* Light blue */
+    color: #333;
+    transform: scale(1.1); /* Slightly larger scale for selected state */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More pronounced shadow for selected state */
+}
+  
+input[type="radio"] {
+    display: none;
+}
+  
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+  
+button:hover {
+    background-color: #0056b3;
+}
+  
+/* Additional styles for aesthetics */
+.form-group {
+    margin-bottom: 20px;
+}
+  
+/* Style adjustments for a better look */
+input[type="radio"]:checked + label {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Updated styles for checked label */
+input[type="radio"]:checked + label {
+    background-color: #ADD8E6; /* Light blue */
+    color: #333; /* Optional: change text color if needed */
+}
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa; /* Light blue background for visibility */
+    border-radius: 5px;
+    color: #333; /* Dark text for contrast */
+    font-weight: bold;
+  }
+  /* Label base styles */
+label {
+    position: relative;
+    /* Existing styles */
+}
+
+/* Add a checkmark icon when a label is selected */
+input[type="radio"]:checked + label::after {
+    content: '✓';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(12, 10, 10);
+    font-size: 20px;
+}
+
+.selected {
+    background-color: #ADD8E6; /* Highlight color */
+    color: #333; /* Text color for selected option */
+  }
+  
+  /* PersonalityTest.css */
+.label-selected {
+    background-color: rgba(220, 223, 46, 0.5); /* Highlight color when selected */
+  }
+  
+  /* Additional styles to visually indicate focus or active state */
+  input[type="radio"]:checked + label {
+    background-color: rgba(182, 212, 49, 0.5); /* Ensure the label has the highlight color when selected */
+  }
+  
+  input[type="radio"]:focus + label {
+    box-shadow: 0 0 0 3px rgba(49, 212, 71, 0.5); /* Add a focus style */
+  }
+  

@@ -1,0 +1,48 @@
+.organization-members {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px; /* Add padding for more space */
+}
+
+h2 {
+    font-size: 24px;
+}
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.member-item {
+    display: flex;
+    flex-direction: column; /* Display columns instead of rows */
+    width: 300px;
+    margin-bottom: 20px; /* Increase margin for better spacing */
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.member-item span {
+    margin-bottom: 10px; /* Add space between each span */
+}
+
+.member-type {
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.owner {
+    background-color: #3498db;
+}
+
+.member {
+    background-color: #2ecc71;
+}
+
+.manager {
+    background-color: #e74c3c;
+}

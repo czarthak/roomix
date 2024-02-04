@@ -1,0 +1,84 @@
+.home-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* This adds space between the images */
+}
+
+.images-container img {
+  flex: 1 1 200px; /* Images can grow and shrink from a base of 200px */
+  max-width: calc(50% - 20px); /* Maximum width is half of the container minus the gap */
+  margin-bottom: 20px; /* This adds space below each image */
+}
+
+.images-container img:nth-child(3) {
+  max-width: 50%; /* Adjust this value to make the third image smaller */
+  margin: auto; /* This will center the image */
+}
+
+h1 {
+  color: #007bff;
+}
+
+h2 {
+  color: #333;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+a {
+  color: #007bff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.login-signup-bubble {
+  background-color: #003366; /* Dark blue color */
+  color: white;
+  padding: 10px; /* Reduced from 20px to make the bubble smaller */
+  margin: 10px auto; /* Top and bottom margins are 10px, and left and right margins are auto */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
+  width: auto; /* Adjust this as needed */
+  max-width: 30%; /* Optional: to control the maximum width */
+  display: block; /* This ensures that margin auto has an effect */
+}
+
+
+
+.login-signup-bubble a {
+  color: #FFD700; /* Gold color for contrast and emphasis */
+  text-decoration: none; /* Optional: Removes underline from links */
+}
+
+.login-signup-bubble a:hover {
+  text-decoration: underline; /* Restores underline on hover for visual feedback */
+}

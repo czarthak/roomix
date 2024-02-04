@@ -1,0 +1,26 @@
+.not-found-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Change Link to a for proper styling */
+a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #3498db; /* Change color to your preference */
+}
+
+a:hover {
+    text-decoration: underline;
+}

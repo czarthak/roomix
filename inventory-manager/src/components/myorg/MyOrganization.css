@@ -1,0 +1,17 @@
+.organization-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.organization-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.organization-item h3 {
+    margin-bottom: 5px;
+}
+
+/* Add more styling as needed */
